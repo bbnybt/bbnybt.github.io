@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tran's portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header (transparent, compact) Navigation bar -->
+  <header id="site-header" class="header" role="banner">
+    <div class="container header__inner">
+      <a class="logo" href="/" aria-label="Trang chủ" data-cursor="">
+        <!-- SVG -> IMAGE -->
+        <img src="Assets/logo type vertical.svg" alt="Logo" style="width: 120px; padding-top: 20px;" />
+      </a>
+
+      <nav class="nav hide-on-mobile" aria-label="Chính">
+        <a class="nav__link" href="file:///Users/tran/Desktop/interactive%20A2%20(23.8)/project%20page%202/project.html" data-cursor="">Project</a>
+        <a class="nav__link" href="#!" data-cursor="">About</a>
+        <a class="nav__link" href="#!" data-cursor="">Contact</a>
+      </nav>
+      <!-- Hamburger button -->
+      <button id="menu-toggle"
+              class="hamburger"
+              aria-label="Mở menu"
+              aria-controls="offcanvas"
+              aria-expanded="false"
+              data-cursor="">
+        <span class="hamburger__bar" aria-hidden="true"></span>
+        <span class="hamburger__bar" aria-hidden="true"></span>
+        <span class="hamburger__bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Off-canvas (menu hamburger bar) -->
+  <div id="offcanvas" class="offcanvas" aria-hidden="true">
+    <div class="offcanvas__backdrop" data-close></div>
+    <aside class="offcanvas__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="offcanvas__header">
+        <a class="logo" href="/" aria-label="Trang chủ" data-cursor="">
+          <!-- SVG -> IMAGE -->
+          <img src="Assets/mark.svg" alt="Logo" class="header_logo-img" />
+        </a>
+        <button class="offcanvas__close" data-close aria-label="Đóng menu" data-cursor="">
+          <img src="Assets/close icon.svg" alt="" aria-hidden="true" width="30" height="30" decoding="async" draggable="false">
+        </button>
+
+      </div>
+
+      <nav class="offcanvas__nav">
+        <a class="menu-item" href="#!" data-cursor="">Project</a>
+        <a class="menu-item" href="#!" data-cursor="">About</a>
+        <a class="menu-item" href="#!" data-cursor="">Contact</a>
+      </nav>
+      <!-- Menu info -->
+      <div class="offcanvas__info">
+        <div class="links">
+          <a class="text-link" href="mailto:nyenbaotran@gmail.com" data-cursor="Send mail">→ nyenbaotran@gmail.com</a>
+          <a class="text-link" href="https://www.instagram.com/bb.nybt/" target="_blank" rel="noopener" data-cursor="">→ Instagram</a>
+          <a class="text-link" href="https://www.linkedin.com/in/tranngyen/" target="_blank" rel="noopener" data-cursor="">→ LinkedIn</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Fullscreen hero (no scroll) -->
+  <section class="main-hero_section">
+    <div class="main-hero_canvas" id="hero-canvas">
+      <!-- 10 ảnh placeholder — KHÔNG gắn data-cursor để không hiện text -->
+      <a href="#!" class="canvas-card"><img src="Assets/coke.png"  alt=""></a> <!-- 1 -->
+      <a href="#!" class="canvas-card"><img src="Assets/error.png"  alt=""></a> <!-- 2 -->
+      <a href="#!" class="canvas-card"><img src="Assets/Cat.png"  alt=""></a> <!-- 3 -->
+      <a href="#!" class="canvas-card"><img src="Assets/gemini.png"  alt=""></a> <!-- 4 -->
+      <a href="#!" class="canvas-card"><img src="Assets/no waste dumpling.png"  alt=""></a> <!-- 5 -->
+      <a href="#!" class="canvas-card"><img src="Assets/photo.png"  alt=""></a> <!-- 6 -->
+      <a href="#!" class="canvas-card"><img src="Assets/photoshop.png"  alt=""></a> <!-- 7 -->
+      <a href="#!" class="canvas-card"><img src="Assets/attention.png"  alt=""></a> <!-- 8 -->
+      <a href="#!" class="canvas-card"><img src="Assets/hi5.png"  alt=""></a> <!-- 9 -->
+      <a href="#!" class="canvas-card"><img src="Assets/caution.png"  alt=""></a> <!-- 10 -->
+    </div>
+
+    <div class="main-hero_typo">
+      <div class="main-hero_heading-wrap">
+        <img src="Assets/me.png" alt="Me" class="main-hero_heading" />
+      </div>
+    </div>
+
+    <div class="main-hero_gradient-behind" aria-hidden="true"></div>
+  </section>
+
+  <!-- Custom cursor -->
+  <div class="cursor-wrapper">
+    <div class="cursor" id="cursor">
+      <div class="cursor-inner" id="cursor-inner">
+        <span id="cursor-label"> </span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 12h10M13 8l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
