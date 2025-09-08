@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Portfolio</title>
+  <link rel="stylesheet" href="contact.css" />
+  <script defer src="contact.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+   <header id="site-header" class="header" role="banner">
+      <div class="container header__inner">
+      <a class="logo" href="/Users/tran/Desktop/A2_s4038113_Nguyen-Yen-Bao-Tran/web/Home page/index.html" aria-label="Trang chủ" data-cursor="">
+        <!-- SVG -> IMAGE -->
+        <img src="contact.assets/logo type vertical.svg" alt="Logo" style="width: 120px; padding-top: 20px;" />
+      </a>
+
+      <nav class="nav hide-on-mobile" aria-label="Chính">
+        <a class="nav__link" href="/Users/tran/Desktop/A2_s4038113_Nguyen-Yen-Bao-Tran/web/project page/project.html" data-cursor="">Project</a>
+        <a class="nav__link" href="/Users/tran/Desktop/A2_s4038113_Nguyen-Yen-Bao-Tran/web/about page/about.html" data-cursor="">About</a>
+        <a class="nav__link" href="/Users/tran/Desktop/A2_s4038113_Nguyen-Yen-Bao-Tran/web/contact page/contact.html" data-cursor="">Contact</a>
+      </nav>
+      <!-- Hamburger button -->
+      <button id="menu-toggle"
+              class="hamburger"
+              aria-label="Mở menu"
+              aria-controls="offcanvas"
+              aria-expanded="false"
+              data-cursor="">
+        <span class="hamburger__bar" aria-hidden="true"></span>
+        <span class="hamburger__bar" aria-hidden="true"></span>
+        <span class="hamburger__bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Off-canvas (menu hamburger bar) -->
+  <div id="offcanvas" class="offcanvas" aria-hidden="true">
+    <div class="offcanvas__backdrop" data-close></div>
+    <aside class="offcanvas__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="offcanvas__header">
+        <a class="logo" href="/Users/tran/Desktop/A2_s4038113_Nguyen-Yen-Bao-Tran/web/Home page/index.html" aria-label="Trang chủ" data-cursor="">
+          <!-- SVG -> IMAGE -->
+          <img src="contact.assets/mark.svg" alt="Logo" class="header_logo-img" />
+        </a>
+        <button class="offcanvas__close" data-close aria-label="Đóng menu" data-cursor="">
+          <img src="contact.assets/close icon.svg" alt="" aria-hidden="true" width="30" height="30" decoding="async" draggable="false">
+        </button>
+
+      </div>
+
+      <nav class="offcanvas__nav">
+        <a class="menu-item" href="/Users/tran/Desktop/A2_s4038113_Nguyen-Yen-Bao-Tran/web/project page/project.html" data-cursor="">Project</a>
+        <a class="menu-item" href="/Users/tran/Desktop/A2_s4038113_Nguyen-Yen-Bao-Tran/web/about page/about.html" data-cursor="">About</a>
+        <a class="menu-item" href="/Users/tran/Desktop/A2_s4038113_Nguyen-Yen-Bao-Tran/web/contact page/contact.html" data-cursor="">Contact</a>
+      </nav>
+      <!-- Menu info -->
+      <div class="offcanvas__info">
+        <div class="links">
+          <a class="text-link" href="mailto:nyenbaotran@gmail.com" data-cursor="Send mail">→ nyenbaotran@gmail.com</a>
+          <a class="text-link" href="https://www.instagram.com/bb.nybt/" target="_blank" rel="noopener" data-cursor="">→ Instagram</a>
+          <a class="text-link" href="https://www.linkedin.com/in/tranngyen/" target="_blank" rel="noopener" data-cursor="">→ LinkedIn</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Single page frame (neo góc phải-dưới) -->
+  <main class="frame" id="contact">
+    <div class="stack" aria-label="Bảng liên hệ (click là chính SVG)">
+      <!-- Gmail -->
+      <a class="sign sign--gmail" href="mailto:nyenbaotran@gmail.com" aria-label="Gửi Gmail">
+        <img src="contact.assets/gmail.svg" alt="Gmail (cột + bảng chung 1 SVG)" draggable="false">
+      </a>
+
+      <!-- Instagram -->
+      <a class="sign sign--ig" href="https://www.instagram.com/bb.nybt/" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="contact.assets/instagram.svg" alt="Instagram (cột + bảng chung 1 SVG)" draggable="false">
+      </a>
+
+      <!-- LinkedIn -->
+      <a class="sign sign--in" href="https://www.linkedin.com/in/tranngyen/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img src="contact.assets/linkedln.svg" alt="LinkedIn (cột + bảng chung 1 SVG)" draggable="false">
+      </a>
+
+      <!-- Số điện thoại -->
+      <a class="sign sign--phone" href="tel:+84902570596" aria-label="Gọi điện">
+        <img src="contact.assets/phone.svg" alt="Số điện thoại (cột + bảng chung 1 SVG)" draggable="false">
+      </a>
+    </div>
+    <div class="cursor-wrapper">
+    <div class="cursor" id="cursor">
+      <div class="cursor-inner" id="cursor-inner">
+        <span id="cursor-label"> </span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 12h10M13 8l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  </main>
+</body>
+</html>
