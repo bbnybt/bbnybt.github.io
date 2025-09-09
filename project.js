@@ -97,7 +97,7 @@
   {
     title: 'Phuc Long Rebranding',
     image: 'project.assets/phuc long.gif',
-    link: '/Users/tran/Desktop/interactive A2 (23.8)/CODE draft 2/Phuc Long/phuclong.html',
+    link: 'phuclong.html',
     gif: 'project.assets/caption_PL.png'           // <— GIF cho caption
   },
   {
