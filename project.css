@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --bg: url('project.assets/shutterstock_2604405805.jpg');
+  --bg-size: cover; /* Ensure the background image covers the entire element */
+  --bg-position: center; /* Center the background image */
+  background-size: var(--bg-size);
+  background-position: var(--bg-position);
+  --fg: #111827;
+  --muted: #6b7280;
+  --card: #f7f7f8;
+  --brand: #1d4ed8;
+  --border: #e5e7eb;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --font-family: 'Host Grotesk', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
+}
+
+.header__inner {
+  height: 70px;
+  /* display: flex;               <-- bỏ */
+  /* justify-content: space-between; <-- bỏ */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* logo | nav | hamburger */
+  align-items: center;
+  gap: 15px;
+}
+
+.header_logo-img {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+/* logo (anchor có class .logo) */
+.logo { justify-self: start; }
+
+
+
+/* Navigation bar */
+/* menu giữa */
+.nav {
+  display: flex;
+  gap: 20px;
+  justify-self: center;   /* then chốt để menu vào giữa */
+  align-items: center;
+}
+
+.nav__link {
+  margin-top: 10px;
+  padding: 12px 20px;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  color: var(--fg);
+  font-size: 17px;
+  letter-spacing: 0.3px;
+  font-family: var(--font-family);
+}
+
+.nav__link:hover {
+ background: rgba(230, 236, 255, 0.2); color: #e1fe52; border-color: #b9e4eb;
+}
+
+/* Hamburger menu - off canvas */
+.hamburger {
+  justify-self: end;
+  margin-top: 10px;
+  inline-size: 40px;
+  block-size: 70px;
+  background: no-repeat center/40px 40px url("project.assets/ham icon.png"); /* intext SVG icon */
+  border: 0;
+  padding: 0;
+}
+
+.hamburger__bar {
+  width: 20px;
+  height: 2px;
+  display: block;
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+@media (max-width: 900px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+
+.offcanvas {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  pointer-events: none;
+  z-index: 60;
+}
+
+.offcanvas__backdrop {
+  grid-area: 1/1/-1/-1;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.offcanvas__panel {
+  grid-area: 1/1/-1/-1;
+  margin-left: auto;
+  width: min(520px, 100%);
+  max-width: 92vw;
+  height: 100%;
+
+  /* lớp trắng dưới cùng */
+  background-color: #aee6ed;              
+
+  /* hình ở lớp trên */
+  background-image: url("project.assets/sign stand.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+
+  border-left: 1px solid var(--border);
+  transform: translateX(100%);
+  transition: transform .38s var(--ease);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+.offcanvas[aria-hidden="false"] {
+  pointer-events: auto;
+}
+
+.offcanvas[aria-hidden="false"] .offcanvas__backdrop {
+  opacity: 1;
+}
+
+.offcanvas[aria-hidden="false"] .offcanvas__panel {
+  transform: translateX(0);
+}
+
+.offcanvas__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid transparent;
+}
+
+.offcanvas__close{
+  display:inline-grid; place-items:center;
+  inline-size:36px; block-size:36px;
+  border:1px solid transparent; background:transparent; color:var(--fg);
+  border-radius:10px; cursor:pointer;
+}
+.offcanvas__close img{ pointer-events:none; display:block; }
+
+/*offcanvas_text */
+.offcanvas__nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 52px;
+  gap: 65px;
+}
+
+.menu-item {
+  text-align: center;
+  display: block;
+  padding: 5px 5px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  border: 1px solid transparent;
+  font-family: var(--font-family);
+}
+
+.menu-item:hover {
+  border-color: transparent;
+}
+
+/* off-canvas content */
+.offcanvas__info {
+  padding: 12px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-family: var(--font-family);
+}
+
+.offcanvas__info .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.text-link {
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 18px;
+  font-family: var(--font-family);
+}
+
+.text-link:hover {
+  color: #d4e224;
+  border-color: var(--brand);
+}
+
+.body--lock {
+  overflow: hidden;
+}
+
+/* Responsive styles phone */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+/*offcanvas_text */
+  .offcanvas__nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 90px;
+  gap: 47px;
+}
+  .main-hero_canvas {
+    inset: -16vh -22vw -16vh -22vw;
+  }
+
+  .canvas-card:nth-child(7n + 1) {
+    left: -10%;
+    top: 10%;
+    width: 50vw;
+  }
+
+  .canvas-card:nth-child(7n + 6) {
+    left: 108%;
+    top: 48%;
+    width: 50vw;
+  }
+
+  .canvas-card:nth-child(7n + 7) {
+    left: 60%;
+    top: 110%;
+    width: 40vw;
+  }
+}
+
+.cursor-wrapper {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  transition: width 0.18s ease, height 0.18s ease, background 0.18s ease,
+    border-color 0.18s ease, opacity 0.12s ease;
+  opacity: 0;
+  color: #0b1324;
+  font-family: var(--font-family);
+}
+
+.cursor-inner {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateZ(0) scale(0.85);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/*phần bên trong (vector) của cursor */
+.cursor-inner::before {
+  content: "";
+  inline-size: 20px;
+  block-size: 20px;
+  background: no-repeat center/contain url("project.assets/arrrow.svg");
+  flex: 0 0 20px;
+}
+
+/* khi “hover” vào target (JS đã add .is-active lên #cursor) */
+.cursor.is-active {
+  width: auto;
+  height: auto;
+  padding: 5px 5px;
+  border-radius: 12px;
+  background: #d6bafa; border-color: rgba(29, 78, 216, 0.25);
+}
+
+.cursor.is-active .cursor-inner {
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+}
+
+.cursor.is-active[data-mx][data-my] {
+  transform: translate3d(calc(var(--x) * 1px + var(--mx, 0px)),
+    calc(var(--y) * 1px + var(--my, 0px)), 0);
+}
+
+input,
+textarea {
+  cursor: text;
+  font-family: var(--font-family);
+}
+
+input:hover,
+textarea:hover {
+  cursor: text;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .offcanvas__panel,
+  .offcanvas__backdrop,
+  .hamburger__bar,
+  .canvas-card {
+    transition: none !important;
+  }
+}
+
+/* iPad landscape: nằm giữa desktop nhỏ (<=1024) và mobile (<=900) */
+@media (min-width: 901px) and (max-width: 1366px) {
+  .container { padding: 0 24px; }
+
+  .header__inner { height: 64px; }
+  .header_logo-img { height: 18px; }
+
+  /* nav gọn lại một chút */
+  .nav {
+    gap: 16px;
+  }
+  
+  .nav__link {
+    font-size: 16px;
+    padding: 10px 16px;
+    border-radius: 12px;
+  }
+
+  /* hamburger thấp hơn, icon nhỏ lại */
+  .hamburger {
+    block-size: 56px;
+    background-size: 32px 32px;
+  }
+
+  /* panel off-canvas hẹp hơn và ảnh thu nhỏ lại */
+  .offcanvas__panel {
+    width: min(480px, 100%);
+    max-width: 88vw;
+    background-size: 84%;
+  }
+
+  /* khoảng cách mục menu trong panel */
+  .offcanvas__nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    gap: 51px;
+}
+
+  }
+  .menu-item { font-size: 20px; }
+
+  /* hero canvas bớt tràn ra ngoài */
+  .main-hero_canvas { inset: -18vh -24vw -18vh -24vw; }
+  .main-hero_heading { width: 340px; }
+
+  /* tinh chỉnh vài card để không tràn cạnh ở 1024 */
+  .canvas-card:nth-child(7n + 1) {
+    left: -10%;
+    top: 8%;
+    width: 32vw;
+  }
+  .canvas-card:nth-child(7n + 6) {
+    left: 112%;
+    top: 46%;
+    width: 34vw;
+  }
+  .canvas-card:nth-child(7n + 7) {
+    left: 66%;
+    top: 120%;
+    width: 32vw;
+  }
+
+  /* cursor: giữ kích thước vừa phải khi có label */
+  .cursor.is-active {
+    padding: 6px 8px;
+    border-radius: 12px;
+  }
+
+/* ===== Stage (ảnh giữa + caption) ===== */
+.wrap { min-height: 100dvh; display: grid; grid-template-rows: auto 1fr auto; }
+.stage{
+  min-height: calc(100vh - 60px - 40px);
+  padding-top: 60px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:22px; text-align:center;
+}
+.frame {
+  margin-top: 30px;
+  width: min(40vw, 860px);
+  aspect-ratio: 5/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  border-radius: 8px;
+  border: 3px solid #6B69F1;
+  overflow: hidden;
+}
+.frame img {
+  max-width: 100%;
+  max-height: auto;
+  object-fit: contain;
+  display: stretch;
+  margin: auto;
+}
+/* ===== Caption là GIF ===== */
+.caption{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding-right: 50px;
+}
+
+.caption-gif{
+  display: block;
+  width: min(28vw, 650px);   /* bề ngang GIF */
+  max-width: 100%;
+  height: auto;
+  image-rendering: auto;
+}
+
+/* Mobile nhỏ hơn một nhịp */
+@media (max-width: 768px){
+  .caption-gif{ width: 60vw; border-radius: 10px; padding-top: 30px; }
+}
+
+.site-footer{ height:40px; display:flex; align-items:center; justify-content:flex-end; padding:0 60px; color:#191919 }
+
+
+/* iPhone 14 Pro Max — portrait (viewport ~430×932) */
+@media screen and (max-width: 430px) and (orientation: portrait) {
+  .frame {
+    width: min(60vw, 400px);
+  }
+  .container { padding: 0 16px; }
+
+  .header__inner { height: 56px; padding-top: env(safe-area-inset-top); }
+  .header_logo-img { height: 16px; }
+
+  /* nav gọn lại */
+  .nav { gap: 12px; }
+  .nav__link {
+    font-size: 15px;
+    padding: 10px 14px;
+    border-radius: 12px;
+  }
+
+  /* hamburger nhỏ hơn một nhịp */
+  .hamburger {
+    inline-size: 40px;
+    block-size: 52px;
+    padding-left: 400px;
+    background-size: 28px 28px;
+  }
+
+  /* offcanvas full-width và ảnh thu nhỏ một chút */
+  .offcanvas__panel {
+    width: 100vw;
+    max-width: 100vw;
+    background-size: 88%;
+  }
+  .offcanvas__header { padding: 16px; }
+
+  /* khoảng cách/size trong menu */
+  .offcanvas__nav { margin-top: 150px; gap: 30px; }
+  .menu-item { font-size: 18px; padding: 10px 12px; }
+
+  .offcanvas__info { padding: 16px; font-size: 14px; }
+  .offcanvas__info .links { gap: 14px; margin-left: 0; }
+  .text-link { font-size: 16px; }
+
+  /* canvas hero */
+  .main-hero_canvas { inset: -12vh -18vw -12vh -18vw; }
+  .main-hero_heading { width: 280px; }
+
+  /* vài card để không tràn */
+  .canvas-card:nth-child(7n + 1) { left: -6%; top: 12%; width: 58vw; }
+  .canvas-card:nth-child(7n + 6) { left: 104%; top: 50%; width: 56vw; }
+  .canvas-card:nth-child(7n + 7) { left: 58%; top: 112%; width: 46vw; }
+
+  /* cursor gọn lại */
+  .cursor { width: 32px; height: 32px; }
+  .cursor.is-active { padding: 4px 6px; }
+  .cursor-inner::before { inline-size: 16px; block-size: 16px; }
+}
+
