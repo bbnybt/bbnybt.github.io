@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 459.17 806.25">
+  <!-- Generator: Adobe Illustrator 29.6.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 9)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+
+      .st1 {
+        font-family: HostGrotesk-Regular, 'Host Grotesk';
+        font-size: 60px;
+      }
+
+      .st2 {
+        fill: #ffef00;
+      }
+
+      .st3 {
+        fill: #f3f3f3;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="st3" x="219.64" y="132.85" width="19.89" height="615.95"/>
+    <rect class="st3" x="209.39" y="739.61" width="40.39" height="9.18"/>
+    <g>
+      <rect class="st2" x="26.55" y="57.46" width="406.07" height="164.88" rx="82.44" ry="82.44"/>
+      <path class="st0" d="M350.19,209.21H108.99c-38.28,0-69.31-31.03-69.31-69.31h0c0-38.28,31.03-69.31,69.31-69.31h241.2c38.28,0,69.31,31.03,69.31,69.31h0c0,38.28-31.03,69.31-69.31,69.31ZM108.99,76.64c-34.94,0-63.26,28.32-63.26,63.26h0c0,34.94,28.32,63.26,63.26,63.26h241.2c34.94,0,63.26-28.32,63.26-63.26h0c0-34.94-28.32-63.26-63.26-63.26H108.99Z"/>
+    </g>
+  </g>
+  <text class="st1" transform="translate(100.56 160.12)"><tspan x="0" y="0">Instagram</tspan></text>
+</svg>
